@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Kotlin Reactive</string>
+    <string name="menu_observable">Observable Example</string>
+    <string name="menu_flowable">Flowable Example</string>
+    <string name="menu_single">Single Example</string>
+    <string name="menu_completable">Completable Example</string>
+    <string name="menu_maybe">Maybe Example</string>
 </resources>

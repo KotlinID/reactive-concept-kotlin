@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="types">
+        <item>@string/menu_observable</item>
+        <item>@string/menu_flowable</item>
+        <item>@string/menu_single</item>
+        <item>@string/menu_completable</item>
+        <item>@string/menu_maybe</item>
+    </string-array>
+</resources>

@@ -8,11 +8,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name="com.baculsoft.sample.kotlinreactive.MainActivity">
+        <activity android:name="com.baculsoft.sample.kotlinreactive.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.baculsoft.sample.kotlinreactive.observable.ObservableActivity" />
     </application>
 </manifest>
