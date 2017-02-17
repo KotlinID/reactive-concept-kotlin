@@ -2,15 +2,17 @@ package com.baculsoft.sample.kotlinreactive.observable
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.Toolbar
 import android.view.MenuItem
 import com.baculsoft.sample.kotlinreactive.R
-import kotlinx.android.synthetic.main.activity_observable.*
+import org.jetbrains.anko.find
+import org.jetbrains.anko.setContentView
 
 class ObservableActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_observable)
+        ObservableUI().setContentView(this)
         setToolbar()
     }
 
@@ -25,8 +27,9 @@ class ObservableActivity : AppCompatActivity() {
     }
 
     private fun setToolbar() {
-        toolbar_observable.title = resources.getString(R.string.menu_observable)
-        setSupportActionBar(toolbar_observable)
+        val toolbar = find<Toolbar>(R.id.toolbar_observable)
+        toolbar.title = resources.getString(R.string.menu_observable)
+        setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 }
