@@ -29,7 +29,7 @@ class ObservableActivity : AppCompatActivity() {
     private fun setToolbar() {
         val toolbar = find<Toolbar>(R.id.toolbar_observable)
         toolbar.title = resources.getString(R.string.menu_observable)
+
         setSupportActionBar(toolbar)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 }

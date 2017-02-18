@@ -17,20 +17,16 @@ class MainUI : AnkoComponent<MainActivity> {
                 toolbar {
                     id = R.id.toolbar_main
                     backgroundColor = ContextCompat.getColor(ctx, R.color.colorAccent)
+                    setTitleTextColor(ContextCompat.getColor(ctx, R.color.colorPrimary))
                 }.lparams {
                     alignParentTop()
                     width = matchParent
                     height = wrapContent
-                    elevation = dip(4).toFloat()
                 }
 
                 recyclerView {
                     id = R.id.rv_main
-                }.lparams {
-                    below(R.id.toolbar_main)
-                    width = matchParent
-                    height = wrapContent
-                }
+                }.lparams { below(R.id.toolbar_main) }
             }
         }
     }

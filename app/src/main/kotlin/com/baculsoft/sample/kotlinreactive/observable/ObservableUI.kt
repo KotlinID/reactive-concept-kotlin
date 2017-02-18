@@ -16,11 +16,12 @@ class ObservableUI : AnkoComponent<ObservableActivity> {
                 toolbar {
                     id = R.id.toolbar_observable
                     backgroundColor = ContextCompat.getColor(ctx, R.color.colorAccent)
+                    setNavigationIcon(R.mipmap.ic_arrow_back)
+                    setTitleTextColor(ContextCompat.getColor(ctx, R.color.colorPrimary))
                 }.lparams {
                     alignParentTop()
                     width = matchParent
                     height = wrapContent
-                    elevation = dip(4).toFloat()
                 }
             }
         }

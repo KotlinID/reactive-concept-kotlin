@@ -21,14 +21,15 @@ class MainActivity : AppCompatActivity() {
     private fun setToolbar() {
         val toolbar = find<Toolbar>(R.id.toolbar_main)
         toolbar.title = title
+
         setSupportActionBar(toolbar)
     }
 
     private fun setAdapter() {
         val menu = resources.getStringArray(R.array.types).toList()
         val adapter = MainAdapter(menu)
-        val layoutManager = LinearLayoutManager(this)
         val recyclerView = find<RecyclerView>(R.id.rv_main)
+        val layoutManager = LinearLayoutManager(this)
 
         recyclerView.layoutManager = layoutManager
         recyclerView.smoothScrollToPosition(recyclerView.bottom)
