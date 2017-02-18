@@ -6,12 +6,24 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.baculsoft.sample.kotlinreactive.R
+import com.baculsoft.sample.kotlinreactive.completable.CompletableActivity
+import com.baculsoft.sample.kotlinreactive.flowable.FlowableActivity
+import com.baculsoft.sample.kotlinreactive.maybe.MaybeActivity
 import com.baculsoft.sample.kotlinreactive.observable.ObservableActivity
+import com.baculsoft.sample.kotlinreactive.single.SingleActivity
 import org.jetbrains.anko.AnkoContext
 import org.jetbrains.anko.find
 import org.jetbrains.anko.internals.AnkoInternals
 
 class MainAdapter constructor(val menu: List<String>) : RecyclerView.Adapter<MainAdapter.MainHolder>() {
+
+    companion object {
+        val OBSERVABLE = 0
+        val FLOWABLE = 1
+        val SINGLE = 2
+        val COMPLETABLE = 3
+        val MAYBE = 4
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): MainHolder? = MainHolder(MainItemUI().createView(AnkoContext.create(parent!!.context, parent)))
 
@@ -37,8 +49,20 @@ class MainAdapter constructor(val menu: List<String>) : RecyclerView.Adapter<Mai
 
         private fun setMenu(context: Context, position: Int) {
             when (position) {
-                0 -> {
+                OBSERVABLE -> {
                     AnkoInternals.internalStartActivity(context, ObservableActivity::class.java, emptyArray())
+                }
+                FLOWABLE -> {
+                    AnkoInternals.internalStartActivity(context, FlowableActivity::class.java, emptyArray())
+                }
+                SINGLE -> {
+                    AnkoInternals.internalStartActivity(context, SingleActivity::class.java, emptyArray())
+                }
+                COMPLETABLE -> {
+                    AnkoInternals.internalStartActivity(context, CompletableActivity::class.java, emptyArray())
+                }
+                MAYBE -> {
+                    AnkoInternals.internalStartActivity(context, MaybeActivity::class.java, emptyArray())
                 }
             }
         }

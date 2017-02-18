@@ -15,5 +15,9 @@
             </intent-filter>
         </activity>
         <activity android:name="com.baculsoft.sample.kotlinreactive.observable.ObservableActivity" />
+        <activity android:name="com.baculsoft.sample.kotlinreactive.flowable.FlowableActivity" />
+        <activity android:name="com.baculsoft.sample.kotlinreactive.single.SingleActivity" />
+        <activity android:name="com.baculsoft.sample.kotlinreactive.completable.CompletableActivity" />
+        <activity android:name="com.baculsoft.sample.kotlinreactive.maybe.MaybeActivity" />
     </application>
 </manifest>

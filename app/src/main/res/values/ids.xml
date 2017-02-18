@@ -2,6 +2,10 @@
 <resources>
     <item name="toolbar_main" type="id" />
     <item name="toolbar_observable" type="id" />
+    <item name="toolbar_flowable" type="id" />
+    <item name="toolbar_single" type="id" />
+    <item name="toolbar_completable" type="id" />
+    <item name="toolbar_maybe" type="id" />
     <item name="rv_main" type="id" />
     <item name="tv_main_menu" type="id" />
 </resources>
