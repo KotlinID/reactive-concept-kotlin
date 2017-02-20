@@ -10,4 +10,6 @@
     <item name="tv_main_menu" type="id" />
     <item name="tv_observable" type="id" />
     <item name="btn_observable" type="id" />
+    <item name="tv_flowable" type="id" />
+    <item name="btn_flowable" type="id" />
 </resources>
