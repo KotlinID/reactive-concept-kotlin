@@ -1,24 +1,35 @@
 package com.baculsoft.sample.kotlinreactive.observable
 
+import android.annotation.SuppressLint
 import android.support.v4.content.ContextCompat
 import android.view.Gravity
 import com.baculsoft.sample.kotlinreactive.R
 import org.jetbrains.anko.*
 import org.jetbrains.anko.appcompat.v7.toolbar
+import org.jetbrains.anko.design.appBarLayout
 import org.jetbrains.anko.design.coordinatorLayout
 
 class ObservableUI : AnkoComponent<ObservableActivity> {
 
+    @SuppressLint("NewApi")
     override fun createView(ui: AnkoContext<ObservableActivity>) = with(ui) {
         coordinatorLayout {
+            id = R.id.content_observable
             backgroundColor = ContextCompat.getColor(ctx, R.color.colorPrimary)
 
             relativeLayout {
-                toolbar {
-                    id = R.id.toolbar_observable
+                appBarLayout {
+                    id = R.id.abl_observable
                     backgroundColor = ContextCompat.getColor(ctx, R.color.colorAccent)
-                    setNavigationIcon(R.mipmap.ic_arrow_back)
-                    setTitleTextColor(ContextCompat.getColor(ctx, R.color.colorPrimary))
+                    elevation = dip(4).toFloat()
+
+                    toolbar {
+                        id = R.id.toolbar_observable
+                        setTitleTextColor(ContextCompat.getColor(ctx, R.color.colorPrimary))
+                    }.lparams {
+                        width = matchParent
+                        height = wrapContent
+                    }
                 }.lparams {
                     alignParentTop()
                     width = matchParent
@@ -32,7 +43,7 @@ class ObservableUI : AnkoComponent<ObservableActivity> {
                     textSize = 16f
                     gravity = Gravity.CENTER
                 }.lparams {
-                    below(R.id.toolbar_observable)
+                    below(R.id.abl_observable)
                     centerInParent()
                     width = matchParent
                     height = wrapContent

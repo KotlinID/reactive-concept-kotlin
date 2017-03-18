@@ -1,12 +1,14 @@
 package com.baculsoft.sample.kotlinreactive.observable
 
 import android.os.Bundle
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.TextView
 import com.baculsoft.sample.kotlinreactive.R
+import com.baculsoft.sample.kotlinreactive.extensions.getStatusBarHeight
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -35,6 +37,8 @@ class ObservableActivity : AppCompatActivity() {
     private fun setToolbar() {
         val toolbar = find<Toolbar>(R.id.toolbar_observable)
         toolbar.title = resources.getString(R.string.menu_observable)
+        toolbar.navigationIcon = ContextCompat.getDrawable(this, R.drawable.bg_arrow_back)
+        toolbar.setPadding(0, toolbar.getStatusBarHeight(), 0, 0)
 
         setSupportActionBar(toolbar)
     }
@@ -42,7 +46,7 @@ class ObservableActivity : AppCompatActivity() {
     private fun addListener() {
         val button = find<Button>(R.id.btn_observable)
         val textView = find<TextView>(R.id.tv_observable)
-        button.setOnClickListener { view -> doSubscribe(textView) }
+        button.setOnClickListener { doSubscribe(textView) }
     }
 
     private fun doSubscribe(textView: TextView) {

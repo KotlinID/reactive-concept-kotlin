@@ -13,7 +13,7 @@ import com.baculsoft.sample.kotlinreactive.observable.ObservableActivity
 import com.baculsoft.sample.kotlinreactive.single.SingleActivity
 import org.jetbrains.anko.AnkoContext
 import org.jetbrains.anko.find
-import org.jetbrains.anko.internals.AnkoInternals
+import org.jetbrains.anko.startActivity
 
 class MainAdapter constructor(val menu: List<String>) : RecyclerView.Adapter<MainAdapter.MainHolder>() {
 
@@ -41,28 +41,26 @@ class MainAdapter constructor(val menu: List<String>) : RecyclerView.Adapter<Mai
                 val textView = itemView.find<TextView>(R.id.tv_main_menu)
                 textView.text = menu
 
-                itemView.setOnClickListener { view ->
-                    setMenu(itemView.context, adapterPosition)
-                }
+                itemView.setOnClickListener { setMenu(itemView.context, adapterPosition) }
             }
         }
 
         private fun setMenu(context: Context, position: Int) {
             when (position) {
                 OBSERVABLE -> {
-                    AnkoInternals.internalStartActivity(context, ObservableActivity::class.java, emptyArray())
+                    context.startActivity<ObservableActivity>()
                 }
                 FLOWABLE -> {
-                    AnkoInternals.internalStartActivity(context, FlowableActivity::class.java, emptyArray())
+                    context.startActivity<FlowableActivity>()
                 }
                 SINGLE -> {
-                    AnkoInternals.internalStartActivity(context, SingleActivity::class.java, emptyArray())
+                    context.startActivity<SingleActivity>()
                 }
                 COMPLETABLE -> {
-                    AnkoInternals.internalStartActivity(context, CompletableActivity::class.java, emptyArray())
+                    context.startActivity<CompletableActivity>()
                 }
                 MAYBE -> {
-                    AnkoInternals.internalStartActivity(context, MaybeActivity::class.java, emptyArray())
+                    context.startActivity<MaybeActivity>()
                 }
             }
         }

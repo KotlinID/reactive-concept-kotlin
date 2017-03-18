@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <item name="content_main" type="id" />
+    <item name="content_observable" type="id" />
+    <item name="content_flowable" type="id" />
+    <item name="content_single" type="id" />
+    <item name="content_completable" type="id" />
+    <item name="content_maybe" type="id" />
+    <item name="abl_main" type="id" />
+    <item name="abl_observable" type="id" />
+    <item name="abl_flowable" type="id" />
+    <item name="abl_single" type="id" />
+    <item name="abl_completable" type="id" />
+    <item name="abl_maybe" type="id" />
     <item name="toolbar_main" type="id" />
     <item name="toolbar_observable" type="id" />
     <item name="toolbar_flowable" type="id" />

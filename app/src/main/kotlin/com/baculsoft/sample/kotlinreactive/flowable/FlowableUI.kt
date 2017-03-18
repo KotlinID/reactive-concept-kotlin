@@ -1,24 +1,35 @@
 package com.baculsoft.sample.kotlinreactive.flowable
 
+import android.annotation.SuppressLint
 import android.support.v4.content.ContextCompat
 import android.view.Gravity
 import com.baculsoft.sample.kotlinreactive.R
 import org.jetbrains.anko.*
 import org.jetbrains.anko.appcompat.v7.toolbar
+import org.jetbrains.anko.design.appBarLayout
 import org.jetbrains.anko.design.coordinatorLayout
 
 class FlowableUI : AnkoComponent<FlowableActivity> {
 
+    @SuppressLint("NewApi")
     override fun createView(ui: AnkoContext<FlowableActivity>) = with(ui) {
         coordinatorLayout {
+            id = R.id.content_flowable
             backgroundColor = ContextCompat.getColor(ctx, R.color.colorPrimary)
 
             relativeLayout {
-                toolbar {
-                    id = R.id.toolbar_flowable
+                appBarLayout {
+                    id = R.id.abl_flowable
                     backgroundColor = ContextCompat.getColor(ctx, R.color.colorAccent)
-                    setNavigationIcon(R.mipmap.ic_arrow_back)
-                    setTitleTextColor(ContextCompat.getColor(ctx, R.color.colorPrimary))
+                    elevation = dip(4).toFloat()
+
+                    toolbar {
+                        id = R.id.toolbar_flowable
+                        setTitleTextColor(ContextCompat.getColor(ctx, R.color.colorPrimary))
+                    }.lparams {
+                        width = matchParent
+                        height = wrapContent
+                    }
                 }.lparams {
                     alignParentTop()
                     width = matchParent
@@ -32,7 +43,7 @@ class FlowableUI : AnkoComponent<FlowableActivity> {
                     textSize = 16f
                     gravity = Gravity.CENTER
                 }.lparams {
-                    below(R.id.toolbar_flowable)
+                    below(R.id.abl_flowable)
                     centerInParent()
                     width = matchParent
                     height = wrapContent
