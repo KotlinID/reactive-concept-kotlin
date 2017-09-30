@@ -4,10 +4,24 @@ import android.annotation.SuppressLint
 import android.support.v4.content.ContextCompat
 import android.view.Gravity
 import com.baculsoft.sample.kotlinreactive.R
-import org.jetbrains.anko.*
+import org.jetbrains.anko.AnkoComponent
+import org.jetbrains.anko.AnkoContext
+import org.jetbrains.anko.alignParentBottom
+import org.jetbrains.anko.alignParentTop
 import org.jetbrains.anko.appcompat.v7.toolbar
+import org.jetbrains.anko.backgroundColor
+import org.jetbrains.anko.below
+import org.jetbrains.anko.bottomPadding
+import org.jetbrains.anko.button
+import org.jetbrains.anko.centerInParent
 import org.jetbrains.anko.design.appBarLayout
 import org.jetbrains.anko.design.coordinatorLayout
+import org.jetbrains.anko.dip
+import org.jetbrains.anko.matchParent
+import org.jetbrains.anko.relativeLayout
+import org.jetbrains.anko.textColor
+import org.jetbrains.anko.textView
+import org.jetbrains.anko.wrapContent
 
 class FlowableUI : AnkoComponent<FlowableActivity> {
 
@@ -58,7 +72,7 @@ class FlowableUI : AnkoComponent<FlowableActivity> {
                     alignParentBottom()
                     width = matchParent
                     height = wrapContent
-                    margin = dip(8)
+                    bottomPadding = dip(8)
                 }
             }
         }

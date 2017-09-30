@@ -5,7 +5,17 @@ import android.util.TypedValue
 import android.view.View
 import android.view.ViewGroup
 import com.baculsoft.sample.kotlinreactive.R
-import org.jetbrains.anko.*
+import org.jetbrains.anko.AnkoComponent
+import org.jetbrains.anko.AnkoContext
+import org.jetbrains.anko.backgroundResource
+import org.jetbrains.anko.dip
+import org.jetbrains.anko.margin
+import org.jetbrains.anko.matchParent
+import org.jetbrains.anko.padding
+import org.jetbrains.anko.relativeLayout
+import org.jetbrains.anko.textColor
+import org.jetbrains.anko.textView
+import org.jetbrains.anko.wrapContent
 
 class MainItemUI : AnkoComponent<ViewGroup> {
 
