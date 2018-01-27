@@ -5,6 +5,8 @@ import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.view.MenuItem
+import android.widget.Button
+import android.widget.TextView
 import com.baculsoft.sample.kotlinreactive.R
 import com.baculsoft.sample.kotlinreactive.extensions.getStatusBarHeight
 import org.jetbrains.anko.find
@@ -16,6 +18,7 @@ class MaybeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         MaybeUI().setContentView(this)
         setToolbar()
+        addListener()
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
@@ -36,4 +39,12 @@ class MaybeActivity : AppCompatActivity() {
 
         setSupportActionBar(toolbar)
     }
+
+    private fun addListener() {
+        val button = find<Button>(R.id.btn_maybe)
+        val textView = find<TextView>(R.id.tv_maybe)
+        button.setOnClickListener { doSubscribe(textView) }
+    }
+
+    private fun doSubscribe(textView: TextView) {}
 }
