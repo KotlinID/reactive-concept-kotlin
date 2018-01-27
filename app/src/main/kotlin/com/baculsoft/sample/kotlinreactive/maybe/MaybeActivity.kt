@@ -8,7 +8,10 @@ import android.view.MenuItem
 import android.widget.Button
 import android.widget.TextView
 import com.baculsoft.sample.kotlinreactive.R
-import com.baculsoft.sample.kotlinreactive.extensions.getStatusBarHeight
+import com.baculsoft.sample.kotlinreactive.ext.statusBarHeight
+import io.reactivex.Maybe
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 import org.jetbrains.anko.find
 import org.jetbrains.anko.setContentView
 
@@ -35,7 +38,7 @@ class MaybeActivity : AppCompatActivity() {
         val toolbar = find<Toolbar>(R.id.toolbar_maybe)
         toolbar.title = resources.getString(R.string.menu_maybe)
         toolbar.navigationIcon = ContextCompat.getDrawable(this, R.drawable.bg_arrow_back)
-        toolbar.setPadding(0, toolbar.getStatusBarHeight(), 0, 0)
+        toolbar.setPadding(0, toolbar.statusBarHeight, 0, 0)
 
         setSupportActionBar(toolbar)
     }
@@ -46,5 +49,14 @@ class MaybeActivity : AppCompatActivity() {
         button.setOnClickListener { doSubscribe(textView) }
     }
 
-    private fun doSubscribe(textView: TextView) {}
+    private fun doSubscribe(textView: TextView) {
+        val questions = arrayListOf("Yes", "or", "No")
+        Maybe.create<List<String>> { maybeEmitter ->
+            try {
+                when { questions.isNotEmpty() -> maybeEmitter.onSuccess(questions) else -> maybeEmitter.onComplete() }
+            } catch (e: Exception) {
+                maybeEmitter.onError(e)
+            }
+        }.observeOn(AndroidSchedulers.mainThread()).subscribeOn(Schedulers.io()).subscribe({ textView.text = it.size.toString() }, { it.printStackTrace() })
+    }
 }

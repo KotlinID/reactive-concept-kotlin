@@ -6,7 +6,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.Toolbar
 import com.baculsoft.sample.kotlinreactive.R
-import com.baculsoft.sample.kotlinreactive.extensions.getStatusBarHeight
+import com.baculsoft.sample.kotlinreactive.ext.statusBarHeight
 import org.jetbrains.anko.find
 import org.jetbrains.anko.setContentView
 
@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
     private fun setToolbar() {
         val toolbar = find<Toolbar>(R.id.toolbar_main)
         toolbar.title = title
-        toolbar.setPadding(0, toolbar.getStatusBarHeight(), 0, 0)
+        toolbar.setPadding(0, toolbar.statusBarHeight, 0, 0)
 
         setSupportActionBar(toolbar)
     }

@@ -8,7 +8,7 @@ import android.view.MenuItem
 import android.widget.Button
 import android.widget.TextView
 import com.baculsoft.sample.kotlinreactive.R
-import com.baculsoft.sample.kotlinreactive.extensions.getStatusBarHeight
+import com.baculsoft.sample.kotlinreactive.ext.statusBarHeight
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -38,7 +38,7 @@ class SingleActivity : AppCompatActivity() {
         val toolbar = find<Toolbar>(R.id.toolbar_single)
         toolbar.title = resources.getString(R.string.menu_single)
         toolbar.navigationIcon = ContextCompat.getDrawable(this, R.drawable.bg_arrow_back)
-        toolbar.setPadding(0, toolbar.getStatusBarHeight(), 0, 0)
+        toolbar.setPadding(0, toolbar.statusBarHeight, 0, 0)
 
         setSupportActionBar(toolbar)
     }

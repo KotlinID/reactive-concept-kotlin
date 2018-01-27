@@ -21,6 +21,7 @@ import org.jetbrains.anko.matchParent
 import org.jetbrains.anko.relativeLayout
 import org.jetbrains.anko.textColor
 import org.jetbrains.anko.textView
+import org.jetbrains.anko.topPadding
 import org.jetbrains.anko.wrapContent
 
 class CompletableUI : AnkoComponent<CompletableActivity> {
@@ -68,10 +69,14 @@ class CompletableUI : AnkoComponent<CompletableActivity> {
                     text = ctx.resources.getString(R.string.btn_subscribe)
                     textColor = ContextCompat.getColor(ctx, R.color.colorPrimaryDark)
                     textSize = 16f
+                    topPadding = dip(16)
+                    bottomPadding = dip(16)
                 }.lparams {
                     alignParentBottom()
                     width = matchParent
                     height = wrapContent
+                    marginEnd = dip(16)
+                    marginStart = dip(16)
                     bottomPadding = dip(8)
                 }
             }
