@@ -4,6 +4,7 @@
           package="com.baculsoft.sample.kotlinreactive">
 
     <application
+        android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"

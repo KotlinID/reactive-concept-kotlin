@@ -24,4 +24,10 @@
     <item name="btn_observable" type="id" />
     <item name="tv_flowable" type="id" />
     <item name="btn_flowable" type="id" />
+    <item name="tv_single" type="id" />
+    <item name="btn_single" type="id" />
+    <item name="tv_completable" type="id" />
+    <item name="btn_completable" type="id" />
+    <item name="tv_maybe" type="id" />
+    <item name="btn_maybe" type="id" />
 </resources>

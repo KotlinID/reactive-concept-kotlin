@@ -20,7 +20,7 @@ import org.jetbrains.anko.wrapContent
 class MainItemUI : AnkoComponent<ViewGroup> {
 
     override fun createView(ui: AnkoContext<ViewGroup>): View = with(ui) {
-        val typedValue: TypedValue = TypedValue()
+        val typedValue = TypedValue()
 
         relativeLayout {
             ctx.theme.resolveAttribute(android.R.attr.selectableItemBackground, typedValue, true)

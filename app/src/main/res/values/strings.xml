@@ -8,5 +8,8 @@
     <string name="menu_maybe">Maybe Example</string>
     <string name="text_observable">Observable</string>
     <string name="text_flowable">Flowable</string>
+    <string name="text_single">Single</string>
+    <string name="text_completable">Completable</string>
+    <string name="text_maybe">Maybe</string>
     <string name="btn_subscribe">Subscribe</string>
 </resources>

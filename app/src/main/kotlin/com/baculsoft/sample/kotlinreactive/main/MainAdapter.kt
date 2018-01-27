@@ -15,14 +15,14 @@ import org.jetbrains.anko.AnkoContext
 import org.jetbrains.anko.find
 import org.jetbrains.anko.startActivity
 
-class MainAdapter constructor(val menu: List<String>) : RecyclerView.Adapter<MainAdapter.MainHolder>() {
+class MainAdapter constructor(private val menu: List<String>) : RecyclerView.Adapter<MainAdapter.MainHolder>() {
 
     companion object {
-        val OBSERVABLE = 0
-        val FLOWABLE = 1
-        val SINGLE = 2
-        val COMPLETABLE = 3
-        val MAYBE = 4
+        const val OBSERVABLE = 0
+        const val FLOWABLE = 1
+        const val SINGLE = 2
+        const val COMPLETABLE = 3
+        const val MAYBE = 4
     }
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): MainHolder? = MainHolder(MainItemUI().createView(AnkoContext.create(parent!!.context, parent)))
